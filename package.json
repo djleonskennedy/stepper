@@ -4,8 +4,8 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"commit": "git-cz",
-		"test": "mocha src/index.test.js -w",
-		"test:single": "mocha src/index.test.js",
+		"test-watch": "mocha src/index.test.js -w",
+		"test": "mocha src/index.test.js",
 		"prebuild": "rimraf dist",
 		"build": "babel --copy-files --out-dir dist --ignore *.test.js src",
 		"semantic-release": "semantic-release pre && npm publish && semantic-release post"
