@@ -1,29 +1,50 @@
 {
-  "name": "stepper",
-  "version": "1.0.0",
-  "description": "\"# stepper\"",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/djleonskennedy/stepper.git"
-  },
-  "keywords": [
-    "step",
-    "animation",
-    "delay",
-    "stepcallback",
-    "events"
-  ],
-  "author": "'Alexsey Zhyravlev, Yuriy Yakovenko <'djleonskennedy@gmail.com'> (http://exbinet.com/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/djleonskennedy/stepper/issues"
-  },
-  "homepage": "https://github.com/djleonskennedy/stepper#readme",
-  "dependencies": {
-    "array-from": "2.1.1"
-  }
+	"name": "easy-step",
+	"description": "Handle steps as you want to",
+	"main": "dist/index.js",
+	"scripts": {
+		"commit": "git-cz",
+		"test": "mocha src/index.test.js -w",
+		"prebuild": "rimraf dist",
+		"build": "babel --copy-files --out-dir dist --ignore *.test.js src",
+		"semantic-release": "semantic-release pre && npm publish && semantic-release post"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/djleonskennedy/stepper.git"
+	},
+	"keywords": [
+		"step",
+		"animation",
+		"delay",
+		"stepcallback",
+		"events"
+	],
+	"author": "'Alexsey Zhyravlev, Yuriy Yakovenko <'djleonskennedy@gmail.com'> (http://exbinet.com/)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/djleonskennedy/stepper/issues"
+	},
+	"homepage": "https://github.com/djleonskennedy/stepper#readme",
+	"dependencies": {
+		"array-from": "2.1.1"
+	},
+	"devDependencies": {
+		"babel-cli": "6.14.0",
+		"babel-preset-es2015": "6.14.0",
+		"babel-preset-stage-2": "6.13.0",
+		"chai": "3.5.0",
+		"commitizen": "2.8.6",
+		"cz-conventional-changelog": "1.2.0",
+		"mocha": "3.0.2",
+		"rimraf": "2.5.4",
+		"semantic-release": "^4.3.5"
+	},
+	"czConfig": "node_modules/cz-conventional-changelog",
+	"babel": {
+		"presets": [
+			"es2015",
+			"stage-2"
+		]
+	}
 }
