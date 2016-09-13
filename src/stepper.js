@@ -11,6 +11,8 @@ export default class Stepper {
     }
   }
 
+
+
   on(event, cb) {
     this.__events[event] = [];
     this.__events[event].push(cb);
