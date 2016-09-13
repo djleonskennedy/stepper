@@ -42,7 +42,7 @@
 		"semantic-release": "^4.3.5"
 	},
 	"config": {
-		"cimmitizen" : {
+		"commitizen" : {
 			"path": "cz-conventional-changelog"
 		}
 	},
