@@ -1,0 +1,29 @@
+{
+  "name": "stepper",
+  "version": "1.0.0",
+  "description": "\"# stepper\"",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djleonskennedy/stepper.git"
+  },
+  "keywords": [
+    "step",
+    "animation",
+    "delay",
+    "stepcallback",
+    "events"
+  ],
+  "author": "'Alexsey Zhyravlev, Yuriy Yakovenko <'djleonskennedy@gmail.com'> (http://exbinet.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/djleonskennedy/stepper/issues"
+  },
+  "homepage": "https://github.com/djleonskennedy/stepper#readme",
+  "dependencies": {
+    "array-from": "2.1.1"
+  }
+}

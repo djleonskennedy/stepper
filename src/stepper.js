@@ -1,14 +1,12 @@
 export default class Stepper {
-  constructor(trigger, buttons, delay=10) {
-
+  constructor(trigger, elements, delay = 10) {
     this.direction = -1;
     this.running = 0;
     this.currentItem = 0;
     this.timeout = delay;
-    this.buttons = [];
     this.__events = {};
-    this.buttons = Array.from(buttons);
-    if(trigger != null) {
+    this.elements = Array.from(elements);
+    if (trigger != null) {
       trigger.addEventListener("click", this.trigger.bind(this, arguments));
     }
   }
@@ -20,14 +18,14 @@ export default class Stepper {
 
   off(event, cb) {
     this.__events[event] = this.__events[event]
-        .filter(fn => fn !== cb);
+      .filter(fn => fn !== cb);
   }
 
   _emit(event, data) {
-    if(this.__events[event] != null) {
+    if (this.__events[event] != null) {
       this.__events[event].forEach(fn => {
         fn(data);
-    })
+      });
     }
   }
 
@@ -40,20 +38,20 @@ export default class Stepper {
     this.run();
   }
 
-  moveBack(){
+  moveBack() {
     this.direction = -1;
     this.run();
   }
 
-  trigger(){
+  trigger() {
     this.reverseDirection();
-    if(this.running === 0) {
+    if (this.running === 0) {
       this.run();
     }
   }
 
   isForward() {
-    return this.direction === 1 && this.currentItem < this.buttons.length;
+    return this.direction === 1 && this.currentItem < this.elements.length;
   }
 
   isBackward() {
@@ -61,7 +59,7 @@ export default class Stepper {
   }
 
   checkRunningEnd() {
-    if (this.running === 1 && this.currentItem === this.buttons.length || this.currentItem == 0){
+    if (this.running === 1 && this.currentItem === this.elements.length || this.currentItem == 0) {
       this.running = 0;
       this._emit('on-complete');
     } else {
@@ -71,13 +69,13 @@ export default class Stepper {
 
   run() {
     this.running = 1;
-    if(this.isForward()) {
-      this._emit('on-forward', this.buttons[this.currentItem]);
+    if (this.isForward()) {
+      this._emit('on-forward', this.elements[this.currentItem]);
       this.currentItem += this.direction;
     }
-    if(this.isBackward()) {
+    if (this.isBackward()) {
       this.currentItem += this.direction;
-      this._emit('on-backward', this.buttons[this.currentItem]);
+      this._emit('on-backward', this.elements[this.currentItem]);
     }
     this.checkRunningEnd();
   }
