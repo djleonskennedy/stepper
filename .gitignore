@@ -1,4 +1,7 @@
 .idea/
 /.idea
-/node_modules
-/build
+node_modules
+build
+coverage
+dist
+.nyc_output

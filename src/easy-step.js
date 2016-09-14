@@ -1,4 +1,4 @@
-export default class Stepper {
+export default class EasyStep {
   constructor(trigger, elements, delay = 10) {
     this.direction = -1;
     this.running = 0;
@@ -10,8 +10,6 @@ export default class Stepper {
       trigger.addEventListener("click", this.trigger.bind(this, arguments));
     }
   }
-
-
 
   on(event, cb) {
     this.__events[event] = [];
