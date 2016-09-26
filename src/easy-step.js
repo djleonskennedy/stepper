@@ -11,6 +11,7 @@ export default class EasyStep {
     }
   }
 
+  // this is on function
   on(event, cb) {
     this.__events[event] = [];
     this.__events[event].push(cb);
