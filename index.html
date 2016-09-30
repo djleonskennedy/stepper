@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EASY STEP example</title>
+    <style>
+        li {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+            width: 50px;
+            height: 50px;
+            color: white;
+            background: #5dc3ff;
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0, 0);
+            transition: all cubic-bezier(0.33, -0.13, 0.55, 1.1) .25s;
+        }
+
+        .state {
+            transform: scale(1, 1);
+            opacity: 1;
+        }
+
+        .trigger {
+            background: #5dc3ff;
+            border: 1px solid white;
+            width: 120px;
+            height: 60px;
+            color: white;
+            cursor: pointer;
+            transition: background linear .2s;
+        }
+
+        .trigger:hover {
+            background: #3193ff;
+        }
+
+        .items {
+            display: flex;
+            flex-direction: row;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <button class="trigger">trigger</button>
+
+        <ul class="items">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+
+    </div>
+
+    <script src="https://unpkg.com/easy-step@1.2.1/dist/index.umd.min.js"></script>
+
+    <script>
+        var
+            items = document.querySelectorAll('.items li');
+            trigger = document.querySelector('.trigger');
+            stepper = new EasyStep(trigger, items, 100);
+
+        stepper.on('on-forward', function(el) {
+            el.classList.add('state');
+        });
+
+        stepper.on('on-backward', function(el) {
+            el.classList.remove('state');
+        });
+
+
+    </script>
+</body>
+</html>
