@@ -74,11 +74,11 @@
             trigger = document.querySelector('.trigger');
             stepper = new EasyStep(trigger, items, 100);
 
-        stepper.on('on-forward', function(el) {
+        stepper.on('forward', function(el) {
             el.classList.add('state');
         });
 
-        stepper.on('on-backward', function(el) {
+        stepper.on('backward', function(el) {
             el.classList.remove('state');
         });
 

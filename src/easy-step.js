@@ -62,7 +62,7 @@ export default class EasyStep {
   checkRunningEnd() {
     if (this.running === 1 && this.currentItem === this.elements.length || this.currentItem == 0) {
       this.running = 0;
-      this._emit('on-complete');
+      this._emit('complete');
     } else {
       setTimeout(this.run.bind(this), this.timeout);
     }
@@ -71,12 +71,12 @@ export default class EasyStep {
   run() {
     this.running = 1;
     if (this.isForward()) {
-      this._emit('on-forward', this.elements[this.currentItem]);
+      this._emit('forward', this.elements[this.currentItem]);
       this.currentItem += this.direction;
     }
     if (this.isBackward()) {
       this.currentItem += this.direction;
-      this._emit('on-backward', this.elements[this.currentItem]);
+      this._emit('backward', this.elements[this.currentItem]);
     }
     this.checkRunningEnd();
   }
