@@ -5,6 +5,10 @@ helps to handle stepped animation programmatically
 [![travis build](https://img.shields.io/travis/djleonskennedy/stepper.svg?style=flat-square)](https://travis-ci.org/djleonskennedy/stepper.svg?branch=master)
 [![travis build](https://img.shields.io/codecov/c/github/codecov/c/djleonskennedy/stepper.svg?style=flat-square)](https://travis-ci.org/djleonskennedy/stepper.svg?branch=master)
 
+## Example
+
+[![Easy Step Example]()](https://djleonskennedy.github.io/stepper/)
+
 ## Installation
 
 npm
@@ -13,7 +17,7 @@ npm
 
 cdn
 
-`<script src="https://unpkg.com/easy-step@1.2.1/dist/index.umd.min.js"></script>`
+`<script src="https://unpkg.com/easy-step@1.3.1/dist/index.umd.min.js"></script>`
 
 ## Usage
 
