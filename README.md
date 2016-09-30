@@ -17,7 +17,7 @@ npm
 
 cdn
 
-`<script src="https://unpkg.com/easy-step@1.3.1/dist/index.umd.min.js"></script>`
+`<script src="https://unpkg.com/easy-step@1.3.0/dist/index.umd.min.js"></script>`
 
 ## Usage
 
